@@ -9,15 +9,17 @@ use App\Models\Label;
 use App\Models\LabelTask;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $tasks = new Task();
         $authors = User::all();
-
-        return view('task.index', compact('tasks', 'authors'));
+        $statuses = TaskStatus::all();
+        
+        return view('task.index', compact('tasks', 'authors', 'statuses'));
     }
 
     public function show(string $id)

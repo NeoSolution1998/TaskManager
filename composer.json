@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
         "rollbar/rollbar-laravel": "^7.2",
+        "spatie/laravel-query-builder": "^5.0",
         "squizlabs/php_codesniffer": "*"
     },
     "require-dev": {
