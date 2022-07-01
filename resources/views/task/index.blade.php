@@ -62,7 +62,8 @@
             </thead>
 
             <tbody>
-                @foreach ($tasks->all() as $task)
+
+                @foreach ($tasks as $task)
                     <tr>
                         <td>{{ $task->id }}</td>
                         <td>{{ $task->status->name }}</td>
@@ -84,5 +85,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $tasks->links() }}
     </main>
 @endsection

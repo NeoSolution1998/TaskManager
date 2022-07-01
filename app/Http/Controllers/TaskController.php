@@ -16,11 +16,17 @@ class TaskController extends Controller
 {
     public function index(Request $request)
     {
-         $tasks = new Task();
+        $tasks = Task::all();
         $authors = User::all();
         $statuses = TaskStatus::all();
-        
 
+        $tasks = QueryBuilder::for(Task::class)
+            ->allowedFilters([
+                AllowedFilter::exact('status_id'),
+                AllowedFilter::exact('created_by_id'),
+                AllowedFilter::exact('assigned_to_id'),
+            ])
+            ->paginate();
         return view('task.index', compact('tasks', 'authors', 'statuses'));
     }
 
