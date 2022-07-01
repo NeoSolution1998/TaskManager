@@ -6,7 +6,7 @@
 
         <div class="d-flex mb-3">
             <div>
-                <form method="GET" action="{{route('tasks.index')}}" accept-charset="UTF-8">
+                <form method="GET" action="{{ route('tasks.index') }}" accept-charset="UTF-8">
                     <div class="row g-1">
                         <div class="col">
                             <select class="form-select me-2" name="filter[status_id]">

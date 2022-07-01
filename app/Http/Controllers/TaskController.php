@@ -10,15 +10,17 @@ use App\Models\LabelTask;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 class TaskController extends Controller
 {
     public function index(Request $request)
     {
-        $tasks = new Task();
+         $tasks = new Task();
         $authors = User::all();
         $statuses = TaskStatus::all();
         
+
         return view('task.index', compact('tasks', 'authors', 'statuses'));
     }
 
