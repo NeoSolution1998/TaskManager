@@ -14,10 +14,10 @@ use App\Http\Controllers\LabelController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::get('task_statuses', 'App\Http\Controllers\TaskStatusController@index')->name('task_statuses.index');
 Route::get('task_statuses/create', 'App\Http\Controllers\TaskStatusController@create')->name('task_statuses.create');
