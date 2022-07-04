@@ -14,7 +14,7 @@ use App\Http\Controllers\LabelController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('/');
 
 Auth::routes();
 
