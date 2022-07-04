@@ -14,7 +14,10 @@ use App\Http\Controllers\LabelController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
 Auth::routes();
 
@@ -41,5 +44,3 @@ Route::get('labels/{id}/edit', 'App\Http\Controllers\LabelController@edit')->nam
 Route::patch('labels/{id}', 'App\Http\Controllers\LabelController@update')->name('labels.update');
 Route::delete('labels/{id}', 'App\Http\Controllers\LabelController@destroy')->name('labels.destroy');
 Route::get('labels/{id}', 'App\Http\Controllers\LabelController@show')->name('labels.show');
-
-
