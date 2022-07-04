@@ -4,7 +4,7 @@
 
     <body>
         <div class="container py-4">
-            <div class="jumbotron">
+            <div>
                 <h1 class="display-4">@lang('Привет от Хекслета!')</h1>
                 <p class="lead">Практические курсы по программированию</p>
                 <hr class="my-4">
