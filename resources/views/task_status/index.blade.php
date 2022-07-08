@@ -30,8 +30,8 @@
                         @auth
                             <td>
                                 <a class="text-danger" href="{{ route('task_statuses.destroy', $status->id) }}"
-                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('удалить')</a>
-                                <a href="{{ route('task_statuses.edit', $status->id) }}">@lang('изменить')</a>
+                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('Удалить')</a>
+                                <a href="{{ route('task_statuses.edit', $status->id) }}">@lang('Изменить')</a>
                             </td>
                         @endauth
                     </tr>

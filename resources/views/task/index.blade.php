@@ -78,7 +78,7 @@
                                     Изменить </a>
 
                                 <a class="text-danger" href="{{ route('tasks.destroy', $task->id) }}"
-                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('удалить')</a>
+                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('Удалить')</a>
                             </td>
                         @endauth
                     </tr>
