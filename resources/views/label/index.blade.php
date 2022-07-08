@@ -32,8 +32,8 @@
                         @auth
                             <td>
                                 <a class="text-danger" href="{{ route('labels.destroy', $label->id) }}"
-                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('удалить')</a>
-                                <a href="{{ route('labels.edit', $label->id) }}">@lang('изменить')</a>
+                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('Удалить')</a>
+                                <a href="{{ route('labels.edit', $label->id) }}">@lang('Изменить')</a>
                             </td>
                         @endauth
                     </tr>
