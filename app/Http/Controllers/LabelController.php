@@ -9,6 +9,7 @@ use App\Models\Label;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
+use App\Http\Requests\StoreLabelRequest;
 
 class LabelController extends Controller
 {
@@ -29,16 +30,14 @@ class LabelController extends Controller
         return view('label.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreLabelRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required'
-        ]);
+        $data = $request->validated();
 
         $label = new Label();
         $label->fill($request->all());
         $label->save();
-        flash('Метка успешно добавлена');
+        flash('Метка успешно создана');
         return redirect()->route('labels.index');
     }
 
@@ -58,7 +57,7 @@ class LabelController extends Controller
 
         $label->fill($request->all());
         $label->save();
-        flash('Метка успешно обновлена');
+        flash('Метка успешно изменена');
         return redirect()->route('labels.index');
     }
     public function destroy(string $id)
