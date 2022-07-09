@@ -52,7 +52,7 @@ class TaskStatusController extends Controller
         $status->fill($request->all());
         $status->save();
 
-        flash('Статус успешно изменен');
+        flash('Статус успешно изменён');
         return redirect()->route('task_statuses.index');
     }
 
@@ -64,7 +64,7 @@ class TaskStatusController extends Controller
             flash('Не удалось удалить статус')->error();
             return redirect()->route('task_statuses.index');
         } else {
-            flash('Статус успешно удален');
+            flash('Статус успешно удалён');
             $status->delete();
         }
         return redirect()->route('task_statuses.index');

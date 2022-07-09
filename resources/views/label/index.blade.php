@@ -5,7 +5,7 @@
 
         @include('flash::message')
 
-        <h1 class="mb-5">Статусы</h1>
+        <h1 class="mb-5">Метки</h1>
         @auth
             <a href="{{ route('labels.create') }}" class="btn btn-primary">@lang('Создать метку')</a>
         @endauth

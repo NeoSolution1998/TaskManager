@@ -7,7 +7,7 @@ use App\Models\TaskStatus;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Artisan;
-use Tests\TestCase;4774
+use Tests\TestCase;
 
 class TaskStatusTest extends TestCase
 {

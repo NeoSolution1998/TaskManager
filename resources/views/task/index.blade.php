@@ -73,10 +73,9 @@
                         </td>
                         <td>{{ $task->created_at->format('d.m.Y') }}</td>
                         @auth
-                            <td>
+                            <td>   
                                 <a class="text-decoration-none" href="{{ route('tasks.edit', $task->id) }}">
                                     Изменить </a>
-
                                 <a class="text-danger" href="{{ route('tasks.destroy', $task->id) }}"
                                     data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('Удалить')</a>
                             </td>
