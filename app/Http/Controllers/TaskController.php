@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
+use App\Http\Requests\StoreTaskRequest;
 
 class TaskController extends Controller
 {
@@ -43,13 +44,9 @@ class TaskController extends Controller
         return view('task.create', compact('users', 'statuses', 'labels'));
     }
 
-    public function store(Request $request)
+    public function store(StoreTaskRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
-            'status_id' => 'required'
-        ]);
+        $this->validated();
 
         $task = new Task();
         $task->fill($request->all());
@@ -60,7 +57,7 @@ class TaskController extends Controller
             $task->labels()->sync($request->input('labels'));
         }
 
-        flash('Задача успешно добавлена');
+        flash('Задача успешно создана');
         return redirect()->route('tasks.index');
     }
     public function edit(string $id)
@@ -91,7 +88,7 @@ class TaskController extends Controller
             $task->labels()->sync($request->input('labels'));
         }
 
-        flash('Задача успешно обновлена');
+        flash('Задача успешно изменена');
         return redirect()->route('tasks.index');
     }
 
