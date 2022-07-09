@@ -16,7 +16,7 @@
                 <textarea class="form-control" name="description" cols="50" rows="10" id="description" value="{{$label->description}}"></textarea>
             </div>
 
-            <input class="btn btn-primary mt-3" type="submit" value="Изменить">
+            <input class="btn btn-primary mt-3" type="submit" value="Обновить">
         </form>
     </main>
 @endsection
