@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TaskStatus;
+use App\Http\Requests\StoreTaskStatusRequest;
 
 class TaskStatusController extends Controller
 {
@@ -19,11 +20,9 @@ class TaskStatusController extends Controller
         return view('task_status.create', compact('task_statuses'));
     }
 
-    public function store(Request $request)
+    public function store(StoreTaskStatusRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required'
-        ]);
+        $data = $request->validated();
 
         $task_status = new TaskStatus();
         $task_status->fill($request->all());
