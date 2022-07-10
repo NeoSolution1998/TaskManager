@@ -73,11 +73,16 @@
                         </td>
                         <td>{{ $task->created_at->format('d.m.Y') }}</td>
                         @auth
-                            <td>   
-                                <a class="text-decoration-none" href="{{ route('tasks.edit', $task->id) }}">
-                                    Изменить </a>
-                                <a class="text-danger" href="{{ route('tasks.destroy', $task->id) }}"
-                                    data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('Удалить')</a>
+                            <td>
+                                @can('delete', $task)
+                                    <a class="text-danger" href="{{ route('tasks.destroy', $task->id) }}"
+                                        data-confirm="Вы уверены?" data-method="delete" rel="nofollow">@lang('Удалить')</a>
+                                @endcan
+                                @can('update', $task)
+                                    <a class="text-decoration-none" href="{{ route('tasks.edit', $task->id) }}">
+                                        Изменить </a>
+                                @endcan
+
                             </td>
                         @endauth
                     </tr>
