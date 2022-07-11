@@ -9,7 +9,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
 
-
 class TaskTest extends TestCase
 {
     public function testIndex(): void

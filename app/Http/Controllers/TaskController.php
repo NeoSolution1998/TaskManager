@@ -13,7 +13,6 @@ use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use App\Http\Requests\StoreTaskRequest;
 
-
 class TaskController extends Controller
 {
     public function index(Request $request)
