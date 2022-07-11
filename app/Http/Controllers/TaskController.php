@@ -67,7 +67,11 @@ class TaskController extends Controller
     public function edit(string $id)
     {
         $task = Task::findOrFail($id);
-        $task->assigned_to_id ? $user = User::findOrFail($task->assigned_to_id) : $user = 'не указан';
+        if (isset($task->assigned_to_id)) {
+            $user = User::findOrFail($task->assigned_to_id);
+        } else {
+            $user = 'не указан';
+        }
 
         $statuses = TaskStatus::all();
         $users = User::all();
@@ -79,7 +83,7 @@ class TaskController extends Controller
     {
         $task = Task::findOrFail($id);
 
-        $this->validate($request, [
+        $data = $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
             'status_id' => 'required'
@@ -88,7 +92,7 @@ class TaskController extends Controller
         $task->fill($request->all());
         $task->save();
 
-        if ($request->input('labels')) {
+        if (isset($data['labels'][0])) {
             $task->labels()->sync($request->input('labels'));
         }
 
