@@ -53,9 +53,10 @@ class TaskController extends Controller
         ]);
 
         $user = Auth::user();
+        $id = $user->id ?? '-----';
         $task = new Task();
         $task->fill($request->all());
-        $task->created_by_id = $user['id'];
+        $task->created_by_id = $id;
         $task->save();
 
         if (isset($data['labels'][0])) {
