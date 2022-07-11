@@ -46,7 +46,7 @@ class TaskController extends Controller
 
     public function store(StoreTaskRequest $request)
     {
-        $this->validate($request, [
+        $data = $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
             'status_id' => 'required'
@@ -57,7 +57,7 @@ class TaskController extends Controller
         $task->created_by_id = Auth::user()->id;
         $task->save();
 
-        if ($request->input('labels')) {
+        if (isset($data['labels'][0])) {
             $task->labels()->sync($request->input('labels'));
         }
 
