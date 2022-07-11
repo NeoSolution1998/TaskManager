@@ -13,6 +13,11 @@ class TaskStatus extends Model
 
     protected $fillable = ['name'];
 
+    /**
+     * Get collection of tasks associated with given task status
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function tasks()
     {
         return $this->hasMany(Task::class, 'status_id');
