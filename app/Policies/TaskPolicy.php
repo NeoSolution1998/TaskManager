@@ -68,5 +68,4 @@ class TaskPolicy
     {
         return $user->id === $task->author->id;
     }
-
 }

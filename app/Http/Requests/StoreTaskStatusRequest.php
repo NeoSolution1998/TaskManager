@@ -25,7 +25,7 @@ class StoreTaskStatusRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:App\Models\TaskStatus,name' 
+            'name' => 'required|unique:App\Models\TaskStatus,name'
         ];
     }
 
