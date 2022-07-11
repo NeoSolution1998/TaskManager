@@ -13,6 +13,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use App\Http\Requests\StoreTaskRequest;
 
+
 class TaskController extends Controller
 {
     public function index(Request $request)
@@ -32,7 +33,7 @@ class TaskController extends Controller
     }
 
     public function show(string $id)
-    { 
+    {
         $task = Task::findOrFail($id);
         return view('task.show', compact('task'));
     }
@@ -46,7 +47,11 @@ class TaskController extends Controller
 
     public function store(StoreTaskRequest $request)
     {
-        $this->validated();
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'status_id' => 'required'
+        ]);
 
         $task = new Task();
         $task->fill($request->all());

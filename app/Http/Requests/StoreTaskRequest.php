@@ -36,7 +36,7 @@ class StoreTaskRequest extends FormRequest
             'name.required' => 'Это обязательное поле',
             'description.required' => 'Это обязательное поле',
             'status_id.required' => 'Это обязательное поле',
-            'name.unique' => 'Статус с таким именем уже существует'
+            'name.unique' => 'Задача с таким именем уже существует'
         ];
     }
 }

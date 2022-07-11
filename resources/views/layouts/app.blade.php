@@ -87,11 +87,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
-        <main class="py-4">
+        </nav>    
             @yield('content')
-        </main>
     </div>
 </body>
 
