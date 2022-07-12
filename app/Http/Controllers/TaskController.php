@@ -52,13 +52,14 @@ class TaskController extends Controller
             'status_id' => 'required'
         ]);
 
+        $user = Auth::user();
+        if (!$user) {
+            throw new Exception();
+        }
+
         $task = new Task();
         $task->fill($request->all());
-        $user = Auth::user();
-        if (!is_null($user->id)) {
-            $id = $user->id;
-            $task->created_by_id = $id;
-        }
+        $task->created_by_id = $user->id;
         $task->save();
 
         if (isset($data['labels'][0])) {
