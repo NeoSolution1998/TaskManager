@@ -54,7 +54,7 @@ class TaskController extends Controller
         ]);
 
         $user = Auth::user();
-        if (!$user) {
+        if (is_null($user)) {
             throw new Exception();
         }
 
