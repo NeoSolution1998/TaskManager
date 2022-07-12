@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use App\Http\Requests\StoreTaskRequest;
+use Exception;
 
 class TaskController extends Controller
 {
