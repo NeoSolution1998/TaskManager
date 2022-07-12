@@ -63,7 +63,7 @@ class TaskPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Task  $task
-     * @return bool
+     * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user, Task $task)
     {
